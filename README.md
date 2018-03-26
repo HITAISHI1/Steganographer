@@ -1,1 +1,3 @@
 # Steganographer
+
+This code takes in an image and a small enough file of any kind and hides it inside the image which can later be retrieved using the password used to imbibe the file into the image....
