@@ -1,0 +1,18 @@
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\bin\Debug\Steganographer.exe
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\bin\Debug\Steganographer.pdb
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.Steganographer.resources
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.Properties.Resources.resources
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.csproj.GenerateResource.Cache
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.exe
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.pdb
+C:\Users\Hitaishi\AppData\Local\Temporary Projects\Steganographer\obj\x86\Debug\Steganographer.Encrypt.resources
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.exe
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.pdb
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.Decrypt.resources
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.Encrypt.resources
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.Steganographer.resources
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.Properties.Resources.resources
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.csproj.GenerateResource.Cache
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\bin\Debug\Steganographer.exe
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\bin\Debug\Steganographer.pdb
+C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Debug\Steganographer.csprojResolveAssemblyReference.cache
