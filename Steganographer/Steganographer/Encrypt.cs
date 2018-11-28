@@ -96,12 +96,12 @@ namespace Steganographer
                 return;
             }
 
-            if((imageFile.Height*imageFile.Height)<((inputFile.Length/3)+2))
+            if(((imageFile.Height)*(imageFile.Width))<((inputFile.Length+10+50)*3))
             {
                 MessageBox.Show("Input File to big!!!!!!!!");
                 return;
             }
-
+            //MessageBox.Show(""+((imageFile.Height - 1) * (imageFile.Width - 1))+"  "+ ((inputFile.Length + 10 + 50) / 3));
             int m;
             for (m = inputFile_txt.Text.Length - 1; m >= 0; m--)
             {
@@ -135,7 +135,7 @@ namespace Steganographer
             }
 
            // MessageBox.Show(extension+"");
-
+            scramble(inputFile, password_txt.Text);
             //File.WriteAllBytes(saveFile_txt.Text + "a.txt", inputFile);
             Bitmap modifiedImage = EncryptImage(imageFile, inputFile,password_txt.Text,extension);
            
@@ -151,11 +151,57 @@ namespace Steganographer
             MessageBox.Show("Done");
         }
 
+        public void scramble(Byte[] inputFile,String pwd)
+        {
+            char[] temp_pwd=new char[pwd.Length];
+            pwd.CopyTo(0, temp_pwd, 0, pwd.Length);
+            int[] order = new int[pwd.Length];
+            
+            for (int i = 0; i < pwd.Length; i++)
+                order[i] = i;
+            for(int i=0;i<pwd.Length;i++)
+                for (int j = 0; j < pwd.Length - 1; j++)
+                {
+                    if (temp_pwd[j] > temp_pwd[j + 1])
+                    {
+                        char temp1=temp_pwd[j];
+                        temp_pwd[j]=temp_pwd[j+1];
+                        temp_pwd[j + 1] = temp1;
 
-        public Bitmap EncryptImage(Bitmap imageFile, Byte[] rawInputFile, String pwd,char[] ext)
+                        int temp2 = order[j];
+                        order[j] = order[j + 1];
+                        order[j + 1] = temp2;
+                    }
+
+                }
+
+            Byte[] buffer = new Byte[pwd.Length];
+            for (int i = 0; i < inputFile.Length-pwd.Length; i += pwd.Length)
+            {
+                for (int k = 0; k < pwd.Length; k++)
+                {
+                    buffer[k] = inputFile[i + k];
+                }
+
+                for (int j = 0; j < pwd.Length; j++)
+                {
+                    int l;
+                    for (l = 0; l < pwd.Length; l++)
+                    {
+                        if (order[l] == j)
+                            break;
+                    }
+
+                    inputFile[i+j] = buffer[l];
+                }
+            }
+            
+        }
+
+        public Bitmap EncryptImage(Bitmap imageFile, Byte[] rawInputFile, String pwd, char[] ext)
         {
             Bitmap modifiedImage = imageFile;           //modified image file
-            Color pixel;                                //for accessing each pixel of the image
+            Color pixel=Color.Black;                                //for accessing each pixel of the image
             Byte[] channel=new Byte [3];                //RGB channels of a pixel 
                     //file size
             int i,j;
@@ -180,8 +226,16 @@ namespace Steganographer
                 {
                     /*if(inputFileBytes<10)
                         MessageBox.Show("" + inputFile[inputFileBytes]);*/
-                    pixel = modifiedImage.GetPixel(j,i);                           //getting pixel
 
+                    //pixel = modifiedImage.GetPixel(j,i);                           //getting pixel
+                   // try
+                   // {
+                        pixel = modifiedImage.GetPixel(j, i);                           //getting pixel 
+                   // }
+                   /* catch
+                    {
+                        MessageBox.Show("i=" + i + "j=" + j);
+                    }*/
                     channel[0] = WriteByte(inputFile[inputFileBytes], pixel.R, 0);
                     channel[1] = WriteByte(inputFile[inputFileBytes], pixel.G, 1);      //modifying each channel
                     channel[2] = WriteByte(inputFile[inputFileBytes], pixel.B, 2);
@@ -228,6 +282,8 @@ namespace Steganographer
 
                     if (j == modifiedImage.Width - 1)
                     {
+                        //if(i==modifiedImage.Height-1)
+                           // MessageBox.Show("i=" + i + "j=" + j + "  " + inputFileBytes + "  " + inputFile.Length);
                         j = 0;                          //if the row of pixel is over
                         i++;                            //next line first pixel
                     }

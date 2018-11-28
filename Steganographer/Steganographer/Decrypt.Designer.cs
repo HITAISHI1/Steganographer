@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Decrypt));
             this.imageFile_lbl = new System.Windows.Forms.Label();
             this.imageFile_txt = new System.Windows.Forms.TextBox();
             this.imageFile_btn = new System.Windows.Forms.Button();
@@ -138,7 +139,9 @@
             this.Controls.Add(this.imageFile_btn);
             this.Controls.Add(this.imageFile_txt);
             this.Controls.Add(this.imageFile_lbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Decrypt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Decrypt";
             this.ResumeLayout(false);
             this.PerformLayout();
