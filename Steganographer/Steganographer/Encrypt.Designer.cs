@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Encrypt));
             this.encrpyt_btn = new System.Windows.Forms.Button();
             this.imageFile_lbl = new System.Windows.Forms.Label();
             this.imageFile_txt = new System.Windows.Forms.TextBox();
@@ -148,6 +149,7 @@
             // password_txt
             // 
             this.password_txt.Location = new System.Drawing.Point(12, 234);
+            this.password_txt.MaxLength = 50;
             this.password_txt.Name = "password_txt";
             this.password_txt.PasswordChar = '*';
             this.password_txt.Size = new System.Drawing.Size(501, 22);
@@ -167,6 +169,7 @@
             // confirm_password_txt
             // 
             this.confirm_password_txt.Location = new System.Drawing.Point(12, 297);
+            this.confirm_password_txt.MaxLength = 50;
             this.confirm_password_txt.Name = "confirm_password_txt";
             this.confirm_password_txt.PasswordChar = '*';
             this.confirm_password_txt.Size = new System.Drawing.Size(501, 22);
@@ -205,7 +208,9 @@
             this.Controls.Add(this.imageFile_txt);
             this.Controls.Add(this.imageFile_lbl);
             this.Controls.Add(this.encrpyt_btn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Encrypt";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Encrypt";
             this.ResumeLayout(false);
             this.PerformLayout();

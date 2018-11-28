@@ -8,3 +8,13 @@ C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganogr
 C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.csproj.GenerateResource.Cache
 C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.exe
 C:\Users\Hitaishi\documents\visual studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.pdb
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\bin\Release\Steganographer.exe
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\bin\Release\Steganographer.pdb
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.csprojResolveAssemblyReference.cache
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.Decrypt.resources
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.Encrypt.resources
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.Steganographer.resources
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.Properties.Resources.resources
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.csproj.GenerateResource.Cache
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.exe
+C:\Users\hitai\Documents\Visual Studio 2010\Projects\Steganographer\Steganographer\obj\x86\Release\Steganographer.pdb

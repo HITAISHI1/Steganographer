@@ -76,7 +76,7 @@ namespace Steganographer
             int m;
             for (m = saveFile.Length - 1; m >= 0; m--)
             {
-                if ((char)saveFile[m] == '.')
+                if (((char)saveFile[m] == '.')||((char)saveFile[m] == '\\'))
                 {
                     break;
                 }
@@ -96,6 +96,8 @@ namespace Steganographer
             
             Array.Resize(ref saveFile, saveFile.Length - extension.Length);
 
+            String temp_pwd = new String(password);
+            rearrange(saveFile, temp_pwd);
 
             File.WriteAllBytes(saveFile_txt.Text,saveFile);
 
@@ -232,7 +234,52 @@ namespace Steganographer
                 return (Byte)y;
             }
         }
+        public void rearrange(Byte[] inputFile, String pwd)
+        {
+            char[] temp_pwd = new char[pwd.Length];
+            pwd.CopyTo(0, temp_pwd, 0, pwd.Length);
+            int[] order = new int[pwd.Length];
 
+            for (int i = 0; i < pwd.Length; i++)
+                order[i] = i;
+            for (int i = 0; i < pwd.Length; i++)
+                for (int j = 0; j < pwd.Length - 1; j++)
+                {
+                    if (temp_pwd[j] > temp_pwd[j + 1])
+                    {
+                        char temp1 = temp_pwd[j];
+                        temp_pwd[j] = temp_pwd[j + 1];
+                        temp_pwd[j + 1] = temp1;
+
+                        int temp2 = order[j];
+                        order[j] = order[j + 1];
+                        order[j + 1] = temp2;
+                    }
+
+          }
+
+            Byte[] buffer = new Byte[pwd.Length];
+            for (int i = 0; i < inputFile.Length - pwd.Length; i += pwd.Length)
+            {
+                for (int k = 0; k < pwd.Length; k++)
+                {
+                    buffer[k] = inputFile[i + k];
+                }
+
+                for (int j = 0; j < pwd.Length; j++)
+                {
+                    int l;
+                    for (l = 0; l < pwd.Length; l++)
+                    {
+                        if (order[l] == j)
+                            break;
+                    }
+
+                    inputFile[i + l] = buffer[j];
+                }
+            }
+
+        }
         public bool CheckEOF(Byte[] File,char[] password)
         {
             if (File.Length < password.Length)
